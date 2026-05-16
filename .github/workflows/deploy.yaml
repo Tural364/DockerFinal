@@ -27,8 +27,8 @@ jobs:
           docker build -t ${{secrets.DOCKER_USERNAME}}/magazine-ui:latest ./NEXIS-ONLINE-STORE-FRONT/my-app
           docker push ${{secrets.DOCKER_USERNAME}}/magazine-ui:latest
 
-  deploy-to-aws-vm:
-    if: github.event_name == 'workflow_dispatch'
+   deploy-to-aws-vm:
+    needs: docker-image-build-and-push 
     runs-on: ubuntu-latest
 
     steps:
