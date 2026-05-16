@@ -14,8 +14,9 @@ services:
       - magazine_network
 
   api:
+    image: tural364/magazine-api:latest
     build:
-      context: ./Course_Work_Magazine  
+      context: ./Course_Work_Magazine
       dockerfile: Dockerfile
     container_name: magazine_api
     depends_on:
@@ -25,12 +26,13 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: "http://+:8080"
-      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=MagazineDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=OrderFlowDB;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True"
     restart: always
     networks:
       - magazine_network
 
   ui:
+    image: tural364/magazine-ui:latest
     build:
       context: ./NEXIS-ONLINE-STORE-FRONT/my-app
       dockerfile: Dockerfile
