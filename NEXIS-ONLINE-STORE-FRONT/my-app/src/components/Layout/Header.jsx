@@ -13,7 +13,7 @@ export const Header = () => {
     return (
         <header className="header">
             <div className="header-inner">
-                <Link to="/" className="logo">Nexis Store
+                <Link to="/" className="logo">Ravon Store
                 </Link>
                 <nav className="menu">
                     {user ? (
